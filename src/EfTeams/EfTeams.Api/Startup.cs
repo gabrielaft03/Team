@@ -1,7 +1,9 @@
+using EfTeams.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,7 +30,7 @@ namespace EfTeams
         {
 
             services.AddControllers();
-            //services.AddDbContext<BasketballDBContext>(option => option.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+            services.AddDbContext<TeamDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("TeamDB")));
 
             //services.AddSwaggerGen(c =>
             //{

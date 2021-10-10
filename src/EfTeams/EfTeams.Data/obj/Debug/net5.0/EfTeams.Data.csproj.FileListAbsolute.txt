@@ -10,3 +10,6 @@ C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.
 C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.dll
 C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\obj\Debug\net5.0\ref\EfTeams.Data.dll
 C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.pdb
+C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\bin\Debug\net5.0\EfTeams.Data.runtimeconfig.json
+C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\bin\Debug\net5.0\EfTeams.Data.runtimeconfig.dev.json
+C:\Gabriela\Proyecto_Globant\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.genruntimeconfig.cache
