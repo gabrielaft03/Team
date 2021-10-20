@@ -7,6 +7,19 @@ namespace EfTeams.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Coaches",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CoachName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Coaches", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Countries",
                 columns: table => new
                 {
@@ -40,35 +53,22 @@ namespace EfTeams.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TeamName = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     Abbreviation = table.Column<string>(type: "nvarchar(7)", nullable: true),
+                    CoachId = table.Column<int>(nullable: false),
                     CountryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Teams_Coaches_CoachId",
+                        column: x => x.CoachId,
+                        principalTable: "Coaches",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Teams_Countries_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Countries",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Coaches",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CoachName = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    TeamId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Coaches", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Coaches_Teams_TeamId",
-                        column: x => x.TeamId,
-                        principalTable: "Teams",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -119,12 +119,6 @@ namespace EfTeams.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Coaches_TeamId",
-                table: "Coaches",
-                column: "TeamId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Players_TeamId",
                 table: "Players",
                 column: "TeamId");
@@ -135,6 +129,11 @@ namespace EfTeams.Data.Migrations
                 column: "LeagueId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Teams_CoachId",
+                table: "Teams",
+                column: "CoachId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Teams_CountryId",
                 table: "Teams",
                 column: "CountryId");
@@ -142,9 +141,6 @@ namespace EfTeams.Data.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Coaches");
-
             migrationBuilder.DropTable(
                 name: "Players");
 
@@ -156,6 +152,9 @@ namespace EfTeams.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Teams");
+
+            migrationBuilder.DropTable(
+                name: "Coaches");
 
             migrationBuilder.DropTable(
                 name: "Countries");

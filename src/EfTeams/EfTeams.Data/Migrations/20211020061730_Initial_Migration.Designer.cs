@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EfTeams.Data.Migrations
 {
     [DbContext(typeof(TeamDbContext))]
-    [Migration("20211010230342_Migration_v1")]
-    partial class Migration_v1
+    [Migration("20211020061730_Initial_Migration")]
+    partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,15 +28,9 @@ namespace EfTeams.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CoachName")
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<int>("TeamId")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("TeamId")
-                        .IsUnique();
 
                     b.ToTable("Coaches");
                 });
@@ -104,6 +98,9 @@ namespace EfTeams.Data.Migrations
                     b.Property<string>("Abbreviation")
                         .HasColumnType("nvarchar(7)");
 
+                    b.Property<int>("CoachId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
@@ -111,6 +108,8 @@ namespace EfTeams.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CoachId");
 
                     b.HasIndex("CountryId");
 
@@ -132,15 +131,6 @@ namespace EfTeams.Data.Migrations
                     b.ToTable("TeamLeagues");
                 });
 
-            modelBuilder.Entity("EfTeams.Data.Models.Coach", b =>
-                {
-                    b.HasOne("EfTeams.Data.Models.Team", "Team")
-                        .WithOne("Coach")
-                        .HasForeignKey("EfTeams.Data.Models.Coach", "TeamId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("EfTeams.Data.Models.Player", b =>
                 {
                     b.HasOne("EfTeams.Data.Models.Team", "Team")
@@ -152,8 +142,14 @@ namespace EfTeams.Data.Migrations
 
             modelBuilder.Entity("EfTeams.Data.Models.Team", b =>
                 {
+                    b.HasOne("EfTeams.Data.Models.Coach", "Coach")
+                        .WithMany()
+                        .HasForeignKey("CoachId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("EfTeams.Data.Models.Country", "Country")
-                        .WithMany("Teams")
+                        .WithMany()
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -162,13 +158,13 @@ namespace EfTeams.Data.Migrations
             modelBuilder.Entity("EfTeams.Data.Models.TeamLeague", b =>
                 {
                     b.HasOne("EfTeams.Data.Models.League", "League")
-                        .WithMany("TeamLeagues")
+                        .WithMany()
                         .HasForeignKey("LeagueId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EfTeams.Data.Models.Team", "Team")
-                        .WithMany("TeamLeagues")
+                        .WithMany()
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

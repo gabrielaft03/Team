@@ -6,6 +6,6 @@ namespace EfTeams.Data.Models
     {
         public int Id { get; set; }
         public string LeagueName { get; set; }
-        public virtual ICollection<TeamLeague> TeamLeagues { get; set; }
+        //public virtual ICollection<TeamLeague> TeamLeagues { get; set; }
     }
 }

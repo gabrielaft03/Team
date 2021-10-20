@@ -1,4 +1,6 @@
+using EfTeams.Api.Middleware;
 using EfTeams.Data;
+using EfTeams.Services.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,14 +30,19 @@ namespace EfTeams
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            //services.AddDbContext<TeamDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("TeamDB")));
             services.AddDbContext<TeamDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("TeamDB")));
+            services.AddControllers();
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            //Injection of services
+            IoC.AddDependency(services);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EfTeams", Version = "v1" });
+            });
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "EfTeams", Version = "v1" });
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,10 +51,16 @@ namespace EfTeams
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-               // app.UseSwagger();
+                // app.UseSwagger();
                 //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EfTeams v1"));
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                var swaggerPath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
+                c.SwaggerEndpoint($"{swaggerPath}/swagger/v1/swagger.json", "EfTeams v1");
+             });
             //app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -18,8 +18,8 @@ namespace EfTeams.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TeamEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new CoachEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new PlayerEntityConfiguration());
+            //modelBuilder.ApplyConfiguration(new CoachEntityConfiguration());
+           // modelBuilder.ApplyConfiguration(new PlayerEntityConfiguration());
             modelBuilder.ApplyConfiguration(new TeamLeagueEntityConfiguration());
         }
     }

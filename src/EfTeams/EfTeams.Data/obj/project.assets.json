@@ -5728,11 +5728,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
+      "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
       "projectName": "EfTeams.Data",
-      "projectPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
+      "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\obj\\",
+      "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {}
+    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {}
   },
   "projects": {
-    "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {
+    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
+        "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
         "projectName": "EfTeams.Api",
-        "projectPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
+        "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\obj\\",
+        "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -34,8 +34,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
-                "projectPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+              "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+                "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+              },
+              "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj": {
+                "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj"
               }
             }
           }
@@ -91,14 +94,14 @@
         }
       }
     },
-    "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
+        "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
         "projectName": "EfTeams.Data",
-        "projectPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
+        "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\obj\\",
+        "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -148,6 +151,70 @@
               "version": "[3.1.9, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj",
+        "projectName": "EfTeams.Services",
+        "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+                "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "imports": [
             "net461",
             "net462",

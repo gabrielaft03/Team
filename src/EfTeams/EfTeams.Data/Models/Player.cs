@@ -17,9 +17,14 @@ namespace EfTeams.Data.Models
     {
         public void Configure(EntityTypeBuilder<Player> builder)
         {
+            //builder.HasOne(x => x.Team)
+            //       .WithMany(x => x.Players)
+            //       .HasForeignKey(x => x.TeamId);
+
+            //nuevo
             builder.HasOne(x => x.Team)
-                   .WithMany(x => x.Players)
-                   .HasForeignKey(x => x.TeamId);
+                     .WithMany(x => x.Players)
+                     .HasForeignKey(x => x.TeamId);
         }
     }
 }

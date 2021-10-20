@@ -1580,6 +1580,19 @@
         "runtime": {
           "bin/placeholder/EfTeams.Data.dll": {}
         }
+      },
+      "EfTeams.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EfTeams.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EfTeams.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EfTeams.Services.dll": {}
+        }
       }
     }
   },
@@ -5917,11 +5930,17 @@
       "type": "project",
       "path": "../EfTeams.Data/EfTeams.Data.csproj",
       "msbuildProject": "../EfTeams.Data/EfTeams.Data.csproj"
+    },
+    "EfTeams.Services/1.0.0": {
+      "type": "project",
+      "path": "../EfTeams.Services/EfTeams.Services.csproj",
+      "msbuildProject": "../EfTeams.Services/EfTeams.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "EfTeams.Data >= 1.0.0",
+      "EfTeams.Services >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.9",
@@ -5936,11 +5955,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
+      "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
       "projectName": "EfTeams.Api",
-      "projectPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
+      "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Api\\obj\\",
+      "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -5963,8 +5982,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
-              "projectPath": "C:\\Gabriela\\Proyecto_Globant\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+            "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+              "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+            },
+            "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj": {
+              "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj"
             }
           }
         }

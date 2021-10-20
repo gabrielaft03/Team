@@ -34,6 +34,7 @@
       "EfTeams.Api/1.0.0": {
         "dependencies": {
           "EfTeams.Data": "1.0.0",
+          "EfTeams.Services": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.9",
@@ -1368,6 +1369,17 @@
         },
         "compile": {
           "EfTeams.Data.dll": {}
+        }
+      },
+      "EfTeams.Services/1.0.0": {
+        "dependencies": {
+          "EfTeams.Data": "1.0.0"
+        },
+        "runtime": {
+          "EfTeams.Services.dll": {}
+        },
+        "compile": {
+          "EfTeams.Services.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3819,6 +3831,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "EfTeams.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EfTeams.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

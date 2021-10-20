@@ -7,6 +7,6 @@ namespace EfTeams.Data.Models
         public int Id { get; set; }
         public string CountryName { get; set; }
 
-        public ICollection<Team> Teams { get; set; }
+        //public ICollection<Team> Teams { get; set; }
     }
 }
