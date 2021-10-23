@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {}
+    "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {}
   },
   "projects": {
-    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {
+    "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
+        "projectUniqueName": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
         "projectName": "EfTeams.Api",
-        "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
+        "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Api\\obj\\",
+        "outputPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -34,11 +34,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
-                "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+              "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+                "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
               },
-              "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj": {
-                "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj"
+              "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Repositories.csproj": {
+                "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Repositories.csproj"
               }
             }
           }
@@ -94,14 +94,14 @@
         }
       }
     },
-    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+    "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
+        "projectUniqueName": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
         "projectName": "EfTeams.Data",
-        "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
+        "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\obj\\",
+        "outputPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -170,14 +170,14 @@
         }
       }
     },
-    "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj": {
+    "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj",
-        "projectName": "EfTeams.Services",
-        "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Services.csproj",
+        "projectUniqueName": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Repositories.csproj",
+        "projectName": "EfTeams.Repositories",
+        "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Services\\EfTeams.Repositories.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Services\\obj\\",
+        "outputPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -200,8 +200,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
-                "projectPath": "C:\\Gabriela\\proyectos\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
+              "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
+                "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
               }
             }
           }

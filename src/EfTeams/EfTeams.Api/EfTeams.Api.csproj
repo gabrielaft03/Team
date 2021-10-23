@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EfTeams.Data\EfTeams.Data.csproj" />
-    <ProjectReference Include="..\EfTeams.Services\EfTeams.Services.csproj" />
+    <ProjectReference Include="..\EfTeams.Services\EfTeams.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

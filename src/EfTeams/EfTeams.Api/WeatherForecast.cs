@@ -1,6 +1,6 @@
 using System;
 
-namespace EfTeams
+namespace EfTeams.Api
 {
     public class WeatherForecast
     {

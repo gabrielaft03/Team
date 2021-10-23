@@ -1,35 +1,50 @@
 ﻿using EfTeams.Data;
+using EfTeams.Data.Models;
+using EfTeams.Services.Interfaces;
+using EfTeams.Services.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EfTeams.Services.Generic
 {
     public interface IUnitOfWork : IDisposable
     {
-        TeamDbContext Context { get; }
-        void Commit();
+        //Repositories
+        //ILeagueRepository LeagueRepository { get; }
+        IRepository<Country> CountryRepository { get; }
+        IPlayerRepository PlayerRepository { get; }
+        Task<bool> Complete();
     }
 
     public class UnitOfWork : IUnitOfWork
     {
-        public TeamDbContext Context { get; }
-
+        private readonly TeamDbContext context;
         public UnitOfWork(TeamDbContext context)
         {
-            Context = context;
+            this.context = context;
         }
 
-        public void Commit()
-        {
-            Context.SaveChanges();
-        }
+        #region Repositories
+
+        //Repositories
+        //private ILeagueRepository leagueRepository;
+        //public ILeagueRepository LeagueRepository => leagueRepository ?? new LeagueRepository(context);
+        private IRepository<Country> countryRepository;
+        public IRepository<Country> CountryRepository =>
+            countryRepository ?? new Repository<Country>(context);
+
+        private IPlayerRepository playerRepository;
+        public IPlayerRepository PlayerRepository =>
+            playerRepository ?? new PlayerRepository(context);
+
+        #endregion
+
+        public async Task<bool> Complete()
+            => await context.SaveChangesAsync() > 0;
 
         public void Dispose()
         {
-            Context.Dispose();
+            context.Dispose();
         }
     }
 }

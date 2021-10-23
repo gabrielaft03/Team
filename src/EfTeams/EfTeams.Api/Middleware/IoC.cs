@@ -9,7 +9,7 @@ namespace EfTeams.Api.Middleware
         {
             // Inyectar los servicios del repositorio génerico
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             return services;
         }
     }

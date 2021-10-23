@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfTeams.Data", "EfTeams.Dat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C027D0D8-80A1-47A9-8435-EE6DCEBC6D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfTeams.Services", "EfTeams.Services\EfTeams.Services.csproj", "{DAF42010-A5FC-47F0-A565-B8F3D3AD1F46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfTeams.Repositories", "EfTeams.Services\EfTeams.Repositories.csproj", "{DAF42010-A5FC-47F0-A565-B8F3D3AD1F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfTeams.Business", "EfTeams.Business\EfTeams.Business.csproj", "{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfTeams.Business", "EfTeams.Business\EfTeams.Business.csproj", "{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
