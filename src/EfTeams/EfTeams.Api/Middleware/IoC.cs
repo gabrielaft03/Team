@@ -1,4 +1,6 @@
-﻿using EfTeams.Services.Generic;
+﻿using EfTeams.Business.Interfaces;
+using EfTeams.Business.Services;
+using EfTeams.Repositories.Generic;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EfTeams.Api.Middleware
@@ -6,10 +8,10 @@ namespace EfTeams.Api.Middleware
     public static class IoC
     {
         public static IServiceCollection AddDependency(this IServiceCollection services)
-        {
-            // Inyectar los servicios del repositorio génerico
+        {           
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ITeamsService, TeamsService>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); //Inject generic repository
             return services;
         }
     }

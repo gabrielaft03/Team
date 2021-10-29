@@ -1,19 +1,23 @@
 ﻿using EfTeams.Data;
 using EfTeams.Data.Models;
-using EfTeams.Services.Interfaces;
-using EfTeams.Services.Repositories;
+using EfTeams.Repositories.Interfaces;
+using EfTeams.Repositories.Repositories;
 using System;
 using System.Threading.Tasks;
 
-namespace EfTeams.Services.Generic
+namespace EfTeams.Repositories.Generic
 {
     public interface IUnitOfWork : IDisposable
     {
         //Repositories
-        //ILeagueRepository LeagueRepository { get; }
+        ITeamLeagueRepository TeamLeagueRepository { get; }
+        IRepository<Coach> CoachRepository { get; }
+        IRepository<League> LeagueRepository { get; }
         IRepository<Country> CountryRepository { get; }
         IPlayerRepository PlayerRepository { get; }
+        ITeamRepository TeamRepository { get; }
         Task<bool> Complete();
+        Task<int> SaveChangesAsync();
     }
 
     public class UnitOfWork : IUnitOfWork
@@ -27,20 +31,31 @@ namespace EfTeams.Services.Generic
         #region Repositories
 
         //Repositories
-        //private ILeagueRepository leagueRepository;
-        //public ILeagueRepository LeagueRepository => leagueRepository ?? new LeagueRepository(context);
+
         private IRepository<Country> countryRepository;
-        public IRepository<Country> CountryRepository =>
-            countryRepository ?? new Repository<Country>(context);
+        public IRepository<Country> CountryRepository => countryRepository ?? new Repository<Country>(context);
+
+        private IRepository<Coach> coachRepository;
+        public IRepository<Coach> CoachRepository => coachRepository ?? new Repository<Coach>(context);
+
+        private IRepository<League> leagueRepository;
+        public IRepository<League> LeagueRepository => leagueRepository ?? new Repository<League>(context);
 
         private IPlayerRepository playerRepository;
-        public IPlayerRepository PlayerRepository =>
-            playerRepository ?? new PlayerRepository(context);
+        public IPlayerRepository PlayerRepository => playerRepository ?? new PlayerRepository(context);
+
+        private ITeamRepository teamRepository;
+        public ITeamRepository TeamRepository => teamRepository ?? new TeamRepository(context);
+
+        private ITeamLeagueRepository teamLeagueRepository;
+        public ITeamLeagueRepository TeamLeagueRepository => teamLeagueRepository ?? new TeamLeagueRepository(context);
 
         #endregion
 
         public async Task<bool> Complete()
             => await context.SaveChangesAsync() > 0;
+        public async Task<int> SaveChangesAsync()
+    => await context.SaveChangesAsync();
 
         public void Dispose()
         {

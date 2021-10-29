@@ -1,13 +1,13 @@
 ﻿using EfTeams.Data;
 using EfTeams.Data.Models;
-using EfTeams.Services.Generic;
-using EfTeams.Services.Interfaces;
+using EfTeams.Repositories.Generic;
+using EfTeams.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EfTeams.Services.Repositories
+namespace EfTeams.Repositories.Repositories
 {
     public class PlayerRepository : Repository<Player>, IPlayerRepository
     {
@@ -16,7 +16,6 @@ namespace EfTeams.Services.Repositories
 
         }
 
-        //aqui solo add player con teamid
         public async Task<IEnumerable<Player>> GetPlayerAsync(int teamId)
             => await context.Players.Where(n => n.TeamId == teamId)
                   .OrderByDescending(n => n.PlayerName)

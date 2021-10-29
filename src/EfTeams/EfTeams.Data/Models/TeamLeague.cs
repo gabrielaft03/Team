@@ -1,13 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.ComponentModel.DataAnnotations;
 
 namespace EfTeams.Data.Models
 {
-    public class TeamLeague
+    public partial class TeamLeague
     {
+        public int Id { get; set; }
+        // [Key]
         public int TeamId { get; set; }
-        public Team Team { get; set; }
+        // [Key]
         public int LeagueId { get; set; }
+
+    }
+
+    public partial class TeamLeague
+    {
+        public Team Team { get; set; }
         public League League { get; set; }
     }
 
@@ -15,15 +24,7 @@ namespace EfTeams.Data.Models
     {
         public void Configure(EntityTypeBuilder<TeamLeague> builder)
         {
-            builder.HasKey(x => new { x.TeamId, x.LeagueId });
 
-            //builder.HasOne<Team>(x => x.Team)
-            //       .WithOne(x => x.TeamLeagues)
-            //       .HasForeignKey(x => x.TeamId);
-
-            //builder.HasOne<League>(x => x.League)
-            //       .WithMany(x => x.TeamLeagues)
-            //       .HasForeignKey(x => x.LeagueId);
         }
     }
 }

@@ -1567,6 +1567,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "EfTeams.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EfTeams.Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EfTeams.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EfTeams.Business.dll": {}
+        }
+      },
       "EfTeams.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5926,6 +5939,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "EfTeams.Business/1.0.0": {
+      "type": "project",
+      "path": "../EfTeams.Business/EfTeams.Business.csproj",
+      "msbuildProject": "../EfTeams.Business/EfTeams.Business.csproj"
+    },
     "EfTeams.Data/1.0.0": {
       "type": "project",
       "path": "../EfTeams.Data/EfTeams.Data.csproj",
@@ -5939,6 +5957,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "EfTeams.Business >= 1.0.0",
       "EfTeams.Data >= 1.0.0",
       "EfTeams.Repositories >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
@@ -5982,6 +6001,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Business\\EfTeams.Business.csproj": {
+              "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Business\\EfTeams.Business.csproj"
+            },
             "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj": {
               "projectPath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Data\\EfTeams.Data.csproj"
             },

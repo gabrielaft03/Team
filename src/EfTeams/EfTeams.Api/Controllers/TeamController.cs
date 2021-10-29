@@ -1,65 +1,243 @@
-﻿using EfTeams.Data.Models;
-using EfTeams.Services.Generic;
-using Microsoft.AspNetCore.Http;
+﻿using EfTeams.Business.Interfaces;
+using EfTeams.Data.Models;
+using EfTeams.Repositories.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace EfTeams.Api.Controllers
 {
-    //[Route("api/[controller]")]
+
     [ApiController]
     public class TeamController : ControllerBase
     {
         private readonly ILogger<TeamController> _logger;
-        // private readonly ITeamsService<TeamsService> _teamService;
-        private readonly IRepository<Team> _genericRepository;
+        private readonly ITeamsService _teamService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public TeamController(ILogger<TeamController> logger, /*, ITeamsService<TeamsService> teamService*/
-                                IRepository<Team> genericRepository,
-                                IUnitOfWork unitOfWork)
+        public TeamController(ILogger<TeamController> logger, ITeamsService teamService, IUnitOfWork unitOfWork)
         {
             _logger = logger;
-            this._genericRepository = genericRepository;
             this._unitOfWork = unitOfWork;
-            //_teamService = teamService;
+            _teamService = teamService;
         }
 
-        [Route("~/GetPlayer"), HttpGet]
+        #region League
+        [Route("~/League"), HttpGet]
+        public async Task<League> GetLeagueAsync(int id)
+        {
+            var result = await _unitOfWork.LeagueRepository.Get(id);
+            return result;
+        }
+
+        [Route("~/League"), HttpPost]
+        public async Task<int> AddLeagueAsync(League league)
+        {
+            await _unitOfWork.LeagueRepository.Add(league);
+            await _unitOfWork.Complete();
+            return league.Id;
+        }
+
+        [Route("~/League"), HttpPut]
+        public async Task<League> EditTeamAsync(League league)
+        {
+            await _unitOfWork.LeagueRepository.Update(league);
+            await _unitOfWork.Complete();
+            return league;
+        }
+
+        [Route("~/League"), HttpDelete]
+        public async Task<bool> LeagueCoachAsync(League league)
+        {
+            await _unitOfWork.LeagueRepository.Delete(league);
+            return await _unitOfWork.Complete();
+        }
+        #endregion League
+
+        #region Team
+        [Route("~/Team"), HttpGet]
+        public async Task<Team> GetTeamAsync(int id)
+        {
+            var result = await _unitOfWork.TeamRepository.Get(id);
+            return result;
+        }
+
+        [Route("~/Teams"), HttpGet]
+        public async Task<IEnumerable<Team>> GetAllTeamsAsync()
+        {
+            var result = await _unitOfWork.TeamRepository.GetAll();
+            return result;
+        }
+
+        [Route("~/Team"), HttpPost]
+        public async Task<int> AddTeamAsync(Team team)
+        {
+            await _unitOfWork.TeamRepository.Add(team);
+            await _unitOfWork.Complete();
+            return team.Id;
+        }
+
+        [Route("~/Teams"), HttpPost]
+        public async Task<IEnumerable<Team>> AddTeamsAsync(IEnumerable<Team> team)
+        {
+            await _unitOfWork.TeamRepository.AddRange(team);
+            await _unitOfWork.Complete();
+            return team;
+        }
+
+        [Route("~/Team"), HttpPut]
+        public async Task<Team> EditTeamAsync(Team team)
+        {
+            await _unitOfWork.TeamRepository.Update(team);
+            await _unitOfWork.Complete();
+            return team;
+        }
+
+        [Route("~/Teams"), HttpPut]
+        public async Task<IEnumerable<Team>> EditTeamsAsync(IEnumerable<Team> team)
+        {
+            await _unitOfWork.TeamRepository.UpdateRange(team);
+            await _unitOfWork.Complete();
+            return team;
+        }
+
+        [Route("~/Team"), HttpDelete]
+        public async Task<bool> DeleteTeamAsync(Team team)
+        {
+            await _unitOfWork.TeamRepository.Delete(team);
+            return await _unitOfWork.Complete();
+        }
+
+        [Route("~/Teams"), HttpDelete]
+        public async Task<IEnumerable<Team>> DeleteTeamsAsync(IEnumerable<Team> team)
+        {
+            await _unitOfWork.TeamRepository.DeleteRange(team);
+            await _unitOfWork.Complete();
+            return team;
+        }
+        #endregion Team
+
+        #region Coach
+        [Route("~/Coach"), HttpGet]
+        public async Task<Coach> GetCoachAsync(int id)
+        {
+            var result = await _unitOfWork.CoachRepository.Get(id);
+            return result;
+        }
+
+        [Route("~/Coaches"), HttpGet]
+        public async Task<IEnumerable<Coach>> GetAllCoachAsync()
+        {
+            var result = await _unitOfWork.CoachRepository.GetAll();
+            return result;
+        }
+
+        [Route("~/Coach/US"), HttpGet]
+        public async Task<Coach> GetCoachUSAsync()
+        {
+            //Find the only Coach in US and return it. Just an example to use Find.
+            var result = await _unitOfWork.CoachRepository.Find(n => n.Id == 1);
+            return result;
+        }
+
+        [Route("~/Coach"), HttpPost]
+        public async Task<int> AddCoachAsync(Coach coach)
+        {
+            await _unitOfWork.CoachRepository.Add(coach);
+            await _unitOfWork.Complete();
+            return coach.Id;
+        }
+
+        [Route("~/Coaches"), HttpPost]
+        public async Task<IEnumerable<Coach>> AddCoachesAsync(IEnumerable<Coach> coach)
+        {
+            await _unitOfWork.CoachRepository.AddRange(coach);
+            await _unitOfWork.Complete();
+            return coach;
+        }
+
+        [Route("~/Coach"), HttpPut]
+        public async Task<Coach> EditCoachAsync(Coach coach)
+        {
+            await _unitOfWork.CoachRepository.Update(coach);
+            await _unitOfWork.Complete();
+            return coach;
+        }
+
+        [Route("~/Coaches"), HttpPut]
+        public async Task<IEnumerable<Coach>> PutCoachesAsync(IEnumerable<Coach> coach)
+        {
+            await _unitOfWork.CoachRepository.UpdateRange(coach);
+            await _unitOfWork.Complete();
+            return coach;
+        }
+
+        [Route("~/Coach"), HttpDelete]
+        public async Task<bool> DeleteCoachAsync(Coach coach)
+        {
+            await _unitOfWork.CoachRepository.Delete(coach);
+            return await _unitOfWork.Complete();
+        }
+
+        [Route("~/Coaches"), HttpDelete]
+        public async Task<IEnumerable<Coach>> DeleteCoachesAsync(IEnumerable<Coach> coach)
+        {
+            await _unitOfWork.CoachRepository.DeleteRange(coach);
+            await _unitOfWork.Complete();
+            return coach;
+        }
+
+        #endregion Coach
+
+        #region Player
+
+        [Route("~/Player"), HttpDelete]
+        public async Task<bool> DeletePlayerAsync(Player player)
+        {
+            await _unitOfWork.PlayerRepository.Delete(player);
+            return await _unitOfWork.Complete();
+        }
+
+        [Route("~/PlayersByTeam"), HttpGet]
         public async Task<IEnumerable<Player>> GetPlayerByTeamAsync(int teamId)
         {
+            //Get with Where
             var result = await _unitOfWork.PlayerRepository.GetPlayerAsync(teamId);
             return result;
         }
 
-        [Route("~/AddPlayer"), HttpPost]
-        [ProducesResponseType(200, Type = typeof(Player))]
-        [ProducesResponseType(400)]
-        public async Task<IActionResult> AddPlayerAsync(Player player)
-        {
-            await _unitOfWork.PlayerRepository.Add(player);
-            return await _unitOfWork.Complete() ? Ok(player) : BadRequest();
-        }
-
-        [Route("~/AddPlayerAsync"), HttpPost]
+        [Route("~/PlayerAsync"), HttpPost]
         [ProducesResponseType(200, Type = typeof(Player))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> AddPlayerJsonAsync(Player player)
         {
-            await _unitOfWork.PlayerRepository.Add(player);
-            var success = await _unitOfWork.Complete();
-            var playerJson = JsonConvert.SerializeObject(player, new JsonSerializerSettings 
-                            { 
-                                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                                PreserveReferencesHandling = PreserveReferencesHandling.Objects
-                            });
+            var success = await _teamService.AddPlayerWithTeamId(player);
+            var playerJson = JsonConvert.SerializeObject(player, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects
+            });
             return success ? Ok(playerJson) : BadRequest();
         }
+
+
+        [Route("~/PlayerTransactionAsync"), HttpPost]
+        [ProducesResponseType(200, Type = typeof(Player))]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> AddPlayerJsonAsyncV3(Player player)
+        {
+            var success = await _teamService.AddPlayerWithTeamIdV3(player);
+            var playerJson = JsonConvert.SerializeObject(player, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects
+            });
+            return success ? Ok(playerJson) : BadRequest();
+        }
+
+        #endregion Player
 
     }
 }

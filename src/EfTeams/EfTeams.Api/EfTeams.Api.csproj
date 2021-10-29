@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EfTeams.Business\EfTeams.Business.csproj" />
     <ProjectReference Include="..\EfTeams.Data\EfTeams.Data.csproj" />
     <ProjectReference Include="..\EfTeams.Services\EfTeams.Repositories.csproj" />
   </ItemGroup>

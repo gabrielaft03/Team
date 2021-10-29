@@ -33,8 +33,9 @@
     ".NETCoreApp,Version=v5.0": {
       "EfTeams.Api/1.0.0": {
         "dependencies": {
+          "EfTeams.Business": "1.0.0",
           "EfTeams.Data": "1.0.0",
-          "EfTeams.Services": "1.0.0",
+          "EfTeams.Repositories": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.9",
@@ -1359,6 +1360,17 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "EfTeams.Business/1.0.0": {
+        "dependencies": {
+          "EfTeams.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "EfTeams.Business.dll": {}
+        },
+        "compile": {
+          "EfTeams.Business.dll": {}
+        }
+      },
       "EfTeams.Data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "3.1.9",
@@ -1371,15 +1383,15 @@
           "EfTeams.Data.dll": {}
         }
       },
-      "EfTeams.Services/1.0.0": {
+      "EfTeams.Repositories/1.0.0": {
         "dependencies": {
           "EfTeams.Data": "1.0.0"
         },
         "runtime": {
-          "EfTeams.Services.dll": {}
+          "EfTeams.Repositories.dll": {}
         },
         "compile": {
-          "EfTeams.Services.dll": {}
+          "EfTeams.Repositories.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3830,12 +3842,17 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "EfTeams.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "EfTeams.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "EfTeams.Services/1.0.0": {
+    "EfTeams.Repositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

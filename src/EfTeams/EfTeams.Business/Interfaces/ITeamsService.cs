@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 
 namespace EfTeams.Business.Interfaces
 {
-    public interface IPlayerService
+    public interface ITeamsService
     {
         Task<IEnumerable<Player>> GetPlayerByTeamAsync(int teamId);
-        Task<Player> AddPlayerWithTeamId(Player player);
+        Task<bool> AddPlayerWithTeamId(Player player);
+        Task<bool> AddPlayerWithTeamIdV3(Player player);
     }
 }

@@ -34,7 +34,6 @@ C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\bin\Debug\net5.0\EfTeams.D
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\bin\Debug\net5.0\EfTeams.Data.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\bin\Debug\net5.0\ref\EfTeams.Data.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\bin\Debug\net5.0\EfTeams.Data.pdb
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.csproj.AssemblyReference.cache
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.AssemblyInfoInputs.cache
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.AssemblyInfo.cs
@@ -43,3 +42,4 @@ C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.D
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\ref\EfTeams.Data.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.pdb
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.genruntimeconfig.cache
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Data\obj\Debug\net5.0\EfTeams.Data.csproj.AssemblyReference.cache

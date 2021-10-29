@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace EfTeams.Services.Generic
+namespace EfTeams.Repositories.Generic
 {
     public interface IRepository<T> where T : class, new()
     {
-        public Task<T> Get(string id);
+        public Task<T> Get(int id);
         public Task<T> Find(Expression<Func<T,bool>>predicate);
         public Task<IEnumerable<T>> GetAll();
         public Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate);
@@ -17,7 +17,5 @@ namespace EfTeams.Services.Generic
         public Task UpdateRange(IEnumerable<T> entity); 
         public Task Delete(T entity);
         public Task DeleteRange(IEnumerable<T> entity);
-
-
     }
 }

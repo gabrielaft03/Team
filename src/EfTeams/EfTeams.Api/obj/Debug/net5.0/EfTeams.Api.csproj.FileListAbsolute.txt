@@ -192,10 +192,12 @@ C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\runtimes\w
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Business.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Data.dll
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Services.dll
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Repositories.dll
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Business.pdb
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Data.pdb
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Services.pdb
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Repositories.pdb
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\staticwebassets\EfTeams.Api.StaticWebAssets.Manifest.cache
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\staticwebassets\EfTeams.Api.StaticWebAssets.xml
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\scopedcss\bundle\EfTeams.Api.styles.css

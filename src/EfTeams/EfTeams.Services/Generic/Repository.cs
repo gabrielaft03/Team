@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace EfTeams.Services.Generic
+namespace EfTeams.Repositories.Generic
 {
     public class Repository<T> : IRepository<T> where T : class, new()
     {
@@ -32,7 +32,7 @@ namespace EfTeams.Services.Generic
         public async Task<T> Find(Expression<Func<T, bool>> predicate)
             => await context.Set<T>().FirstOrDefaultAsync(predicate).ConfigureAwait(true);
 
-        public async Task<T> Get(string id)
+        public async Task<T> Get(int id)
             => await context.Set<T>().FindAsync(id);
 
         public async Task<IEnumerable<T>> GetAll()
