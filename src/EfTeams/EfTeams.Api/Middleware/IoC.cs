@@ -11,7 +11,7 @@ namespace EfTeams.Api.Middleware
         {           
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITeamsService, TeamsService>();
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); //Inject generic repository
+            //services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); //Inject generic repository
             return services;
         }
     }

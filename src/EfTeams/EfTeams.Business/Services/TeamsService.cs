@@ -12,7 +12,6 @@ namespace EfTeams.Business.Services
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly TeamDbContext context;        
-        // private readonly IHttpContextReader httpContextReader;
 
         public TeamsService(IUnitOfWork unitOfWork, TeamDbContext context)
         {
@@ -25,6 +24,7 @@ namespace EfTeams.Business.Services
 
         public async Task<bool> AddPlayerWithTeamId(Player player)
         {
+            context.Players.Remove(player);
             try
             {
                 if (player.TeamId > 0 || player.Team.Id > 0)

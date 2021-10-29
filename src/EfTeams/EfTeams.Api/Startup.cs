@@ -24,7 +24,7 @@ namespace EfTeams.Api
         {
             services.AddControllers();
             services.AddDbContext<TeamDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("TeamDB")));
-
+            //services.AddHttpContextAccessor();
             //var options = new DbContextOptionsBuilder<TeamDbContext>().UseInMemoryDatabase(databaseName: "Test").Options; Unit Test
             services.AddControllers();
             services.AddDependency();

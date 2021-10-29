@@ -25,14 +25,14 @@ namespace EfTeams.Api.Controllers
         }
 
         #region League
-        [Route("~/League"), HttpGet]
+        [Route("~/league"), HttpGet]
         public async Task<League> GetLeagueAsync(int id)
         {
             var result = await _unitOfWork.LeagueRepository.Get(id);
             return result;
         }
 
-        [Route("~/League"), HttpPost]
+        [Route("~/league"), HttpPost]
         public async Task<int> AddLeagueAsync(League league)
         {
             await _unitOfWork.LeagueRepository.Add(league);
@@ -40,7 +40,7 @@ namespace EfTeams.Api.Controllers
             return league.Id;
         }
 
-        [Route("~/League"), HttpPut]
+        [Route("~/league"), HttpPut]
         public async Task<League> EditTeamAsync(League league)
         {
             await _unitOfWork.LeagueRepository.Update(league);
@@ -48,7 +48,7 @@ namespace EfTeams.Api.Controllers
             return league;
         }
 
-        [Route("~/League"), HttpDelete]
+        [Route("~/league"), HttpDelete]
         public async Task<bool> LeagueCoachAsync(League league)
         {
             await _unitOfWork.LeagueRepository.Delete(league);
@@ -57,21 +57,21 @@ namespace EfTeams.Api.Controllers
         #endregion League
 
         #region Team
-        [Route("~/Team"), HttpGet]
+        [Route("~/team"), HttpGet]
         public async Task<Team> GetTeamAsync(int id)
         {
             var result = await _unitOfWork.TeamRepository.Get(id);
             return result;
         }
 
-        [Route("~/Teams"), HttpGet]
+        [Route("~/teams"), HttpGet]
         public async Task<IEnumerable<Team>> GetAllTeamsAsync()
         {
             var result = await _unitOfWork.TeamRepository.GetAll();
             return result;
         }
 
-        [Route("~/Team"), HttpPost]
+        [Route("~/team"), HttpPost]
         public async Task<int> AddTeamAsync(Team team)
         {
             await _unitOfWork.TeamRepository.Add(team);
@@ -79,7 +79,7 @@ namespace EfTeams.Api.Controllers
             return team.Id;
         }
 
-        [Route("~/Teams"), HttpPost]
+        [Route("~/teams"), HttpPost]
         public async Task<IEnumerable<Team>> AddTeamsAsync(IEnumerable<Team> team)
         {
             await _unitOfWork.TeamRepository.AddRange(team);
@@ -87,7 +87,7 @@ namespace EfTeams.Api.Controllers
             return team;
         }
 
-        [Route("~/Team"), HttpPut]
+        [Route("~/team"), HttpPut]
         public async Task<Team> EditTeamAsync(Team team)
         {
             await _unitOfWork.TeamRepository.Update(team);
@@ -95,7 +95,7 @@ namespace EfTeams.Api.Controllers
             return team;
         }
 
-        [Route("~/Teams"), HttpPut]
+        [Route("~/teams"), HttpPut]
         public async Task<IEnumerable<Team>> EditTeamsAsync(IEnumerable<Team> team)
         {
             await _unitOfWork.TeamRepository.UpdateRange(team);
@@ -103,14 +103,14 @@ namespace EfTeams.Api.Controllers
             return team;
         }
 
-        [Route("~/Team"), HttpDelete]
+        [Route("~/team"), HttpDelete]
         public async Task<bool> DeleteTeamAsync(Team team)
         {
             await _unitOfWork.TeamRepository.Delete(team);
             return await _unitOfWork.Complete();
         }
 
-        [Route("~/Teams"), HttpDelete]
+        [Route("~/teams"), HttpDelete]
         public async Task<IEnumerable<Team>> DeleteTeamsAsync(IEnumerable<Team> team)
         {
             await _unitOfWork.TeamRepository.DeleteRange(team);
@@ -120,21 +120,21 @@ namespace EfTeams.Api.Controllers
         #endregion Team
 
         #region Coach
-        [Route("~/Coach"), HttpGet]
+        [Route("~/coach"), HttpGet]
         public async Task<Coach> GetCoachAsync(int id)
         {
             var result = await _unitOfWork.CoachRepository.Get(id);
             return result;
         }
 
-        [Route("~/Coaches"), HttpGet]
+        [Route("~/coaches"), HttpGet]
         public async Task<IEnumerable<Coach>> GetAllCoachAsync()
         {
             var result = await _unitOfWork.CoachRepository.GetAll();
             return result;
         }
 
-        [Route("~/Coach/US"), HttpGet]
+        [Route("~/coach/US"), HttpGet]
         public async Task<Coach> GetCoachUSAsync()
         {
             //Find the only Coach in US and return it. Just an example to use Find.
@@ -142,7 +142,7 @@ namespace EfTeams.Api.Controllers
             return result;
         }
 
-        [Route("~/Coach"), HttpPost]
+        [Route("~/coach"), HttpPost]
         public async Task<int> AddCoachAsync(Coach coach)
         {
             await _unitOfWork.CoachRepository.Add(coach);
@@ -150,7 +150,7 @@ namespace EfTeams.Api.Controllers
             return coach.Id;
         }
 
-        [Route("~/Coaches"), HttpPost]
+        [Route("~/coaches"), HttpPost]
         public async Task<IEnumerable<Coach>> AddCoachesAsync(IEnumerable<Coach> coach)
         {
             await _unitOfWork.CoachRepository.AddRange(coach);
@@ -158,7 +158,7 @@ namespace EfTeams.Api.Controllers
             return coach;
         }
 
-        [Route("~/Coach"), HttpPut]
+        [Route("~/coach"), HttpPut]
         public async Task<Coach> EditCoachAsync(Coach coach)
         {
             await _unitOfWork.CoachRepository.Update(coach);
@@ -166,22 +166,22 @@ namespace EfTeams.Api.Controllers
             return coach;
         }
 
-        [Route("~/Coaches"), HttpPut]
-        public async Task<IEnumerable<Coach>> PutCoachesAsync(IEnumerable<Coach> coach)
+        [Route("~/coaches"), HttpPut]
+        public async Task<IEnumerable<Coach>> EditCoachesAsync(IEnumerable<Coach> coach)
         {
             await _unitOfWork.CoachRepository.UpdateRange(coach);
             await _unitOfWork.Complete();
             return coach;
         }
 
-        [Route("~/Coach"), HttpDelete]
+        [Route("~/coach"), HttpDelete]
         public async Task<bool> DeleteCoachAsync(Coach coach)
         {
             await _unitOfWork.CoachRepository.Delete(coach);
             return await _unitOfWork.Complete();
         }
 
-        [Route("~/Coaches"), HttpDelete]
+        [Route("~/coaches"), HttpDelete]
         public async Task<IEnumerable<Coach>> DeleteCoachesAsync(IEnumerable<Coach> coach)
         {
             await _unitOfWork.CoachRepository.DeleteRange(coach);
@@ -193,14 +193,14 @@ namespace EfTeams.Api.Controllers
 
         #region Player
 
-        [Route("~/Player"), HttpDelete]
+        [Route("~/player"), HttpDelete]
         public async Task<bool> DeletePlayerAsync(Player player)
         {
             await _unitOfWork.PlayerRepository.Delete(player);
             return await _unitOfWork.Complete();
         }
 
-        [Route("~/PlayersByTeam"), HttpGet]
+        [Route("~/playersByTeam"), HttpGet]
         public async Task<IEnumerable<Player>> GetPlayerByTeamAsync(int teamId)
         {
             //Get with Where
@@ -208,7 +208,7 @@ namespace EfTeams.Api.Controllers
             return result;
         }
 
-        [Route("~/PlayerAsync"), HttpPost]
+        [Route("~/playerAsync"), HttpPost]
         [ProducesResponseType(200, Type = typeof(Player))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> AddPlayerJsonAsync(Player player)
@@ -223,7 +223,7 @@ namespace EfTeams.Api.Controllers
         }
 
 
-        [Route("~/PlayerTransactionAsync"), HttpPost]
+        [Route("~/playerTransactionAsync"), HttpPost]
         [ProducesResponseType(200, Type = typeof(Player))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> AddPlayerJsonAsyncV3(Player player)

@@ -23,16 +23,20 @@ namespace EfTeams.Repositories.Generic
     public class UnitOfWork : IUnitOfWork
     {
         private readonly TeamDbContext context;
-        public UnitOfWork(TeamDbContext context)
+        //private readonly IRepository<Country> _countryRepository;
+        public UnitOfWork(TeamDbContext context /*, IRepository<Country> countryRepository*/)
         {
             this.context = context;
+           // _countryRepository = countryRepository;
+            //CountryRepo = _countryRepository;
         }
 
         #region Repositories
 
         //Repositories
 
-        private IRepository<Country> countryRepository;
+        private readonly IRepository<Country> countryRepository;
+        //public IRepository<Country> CountryRepo { get; }
         public IRepository<Country> CountryRepository => countryRepository ?? new Repository<Country>(context);
 
         private IRepository<Coach> coachRepository;

@@ -28,7 +28,6 @@ namespace EfTeams.Data.Models
         {
             builder.Property(x => x.TeamName).HasColumnType("nvarchar(50)");
             builder.Property(x => x.Abbreviation).HasColumnType("nvarchar(7)");
-      
         }
     }
 }
