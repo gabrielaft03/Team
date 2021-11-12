@@ -128,7 +128,7 @@ namespace EfTeams.Api.Controllers
         }
 
         [Route("~/coaches"), HttpGet]
-        public async Task<IEnumerable<Coach>> GetAllCoachAsync()
+        public async Task<IEnumerable<Coach>> GetAllCoachesAsync()
         {
             var result = await _unitOfWork.CoachRepository.GetAll();
             return result;

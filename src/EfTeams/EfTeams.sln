@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfTeams.Repositories", "EfT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfTeams.Business", "EfTeams.Business\EfTeams.Business.csproj", "{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4ABEAF40-B86C-45FC-B6A8-68CD2091B578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfTeams.Tests", "EfTeams.Tests\EfTeams.Tests.csproj", "{E0791100-2E2C-4519-B4EF-CA7A81F63126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0791100-2E2C-4519-B4EF-CA7A81F63126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0791100-2E2C-4519-B4EF-CA7A81F63126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0791100-2E2C-4519-B4EF-CA7A81F63126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0791100-2E2C-4519-B4EF-CA7A81F63126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +50,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DAF42010-A5FC-47F0-A565-B8F3D3AD1F46} = {C027D0D8-80A1-47A9-8435-EE6DCEBC6D06}
 		{0CA7C1B0-6D4A-4D0B-A68A-8CCA51308643} = {C027D0D8-80A1-47A9-8435-EE6DCEBC6D06}
+		{E0791100-2E2C-4519-B4EF-CA7A81F63126} = {4ABEAF40-B86C-45FC-B6A8-68CD2091B578}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E02902C2-659C-420C-A455-3EDF0EA119AF}

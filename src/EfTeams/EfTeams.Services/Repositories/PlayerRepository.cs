@@ -13,13 +13,11 @@ namespace EfTeams.Repositories.Repositories
     {
         public PlayerRepository(TeamDbContext context) : base(context)
         {
-
         }
 
         public async Task<IEnumerable<Player>> GetPlayerAsync(int teamId)
             => await context.Players.Where(n => n.TeamId == teamId)
                   .OrderByDescending(n => n.PlayerName)
                   .ToListAsync();
-
     }
 }

@@ -145,13 +145,6 @@ C:\Gabriela\proyectos\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.
 C:\Gabriela\proyectos\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.genruntimeconfig.cache
 C:\Gabriela\proyectos\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Services.dll
 C:\Gabriela\proyectos\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Services.pdb
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.csproj.AssemblyReference.cache
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.AssemblyInfoInputs.cache
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.AssemblyInfo.cs
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.csproj.CoreCompileInputs.cache
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\appsettings.Development.json
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\appsettings.json
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Api.exe
@@ -167,6 +160,7 @@ C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\Microsoft.Identity.Client.dll
@@ -198,6 +192,13 @@ C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Re
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Business.pdb
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Data.pdb
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\bin\Debug\net5.0\EfTeams.Repositories.pdb
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.csproj.AssemblyReference.cache
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.AssemblyInfoInputs.cache
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.AssemblyInfo.cs
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.csproj.CoreCompileInputs.cache
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\EfTeams.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\staticwebassets\EfTeams.Api.StaticWebAssets.Manifest.cache
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\staticwebassets\EfTeams.Api.StaticWebAssets.xml
 C:\Gabriela\GabPractica\Team\src\EfTeams\EfTeams.Api\obj\Debug\net5.0\scopedcss\bundle\EfTeams.Api.styles.css

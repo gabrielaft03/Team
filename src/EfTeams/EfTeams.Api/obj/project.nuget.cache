@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "13cLsM4w9NzKVv5hWbHOfGdwRUmNAQucz8qaAL5h8kg/fjD+qVBm8cWCyiqB5AiVgF7df0JjWK5F43EuVlz+ig==",
+  "dgSpecHash": "FfpK93V38uSXBcxa0od/tQ5W+XSKlQaGy6JYxW2TlVmIVFVDV7lShGddQoX6qAuH4hrcjrOu+JVfWwBUIUxKIA==",
   "success": true,
   "projectFilePath": "C:\\Gabriela\\GabPractica\\Team\\src\\EfTeams\\EfTeams.Api\\EfTeams.Api.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.9\\microsoft.entityframeworkcore.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.9\\microsoft.entityframeworkcore.analyzers.3.1.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.9\\microsoft.entityframeworkcore.design.3.1.9.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.9\\microsoft.entityframeworkcore.inmemory.3.1.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.9\\microsoft.entityframeworkcore.relational.3.1.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.9\\microsoft.entityframeworkcore.sqlserver.3.1.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.9\\microsoft.entityframeworkcore.tools.3.1.9.nupkg.sha512",

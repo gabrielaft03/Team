@@ -39,19 +39,19 @@ namespace EfTeams.Repositories.Generic
         //public IRepository<Country> CountryRepo { get; }
         public IRepository<Country> CountryRepository => countryRepository ?? new Repository<Country>(context);
 
-        private IRepository<Coach> coachRepository;
+        private readonly IRepository<Coach> coachRepository;
         public IRepository<Coach> CoachRepository => coachRepository ?? new Repository<Coach>(context);
 
-        private IRepository<League> leagueRepository;
+        private readonly IRepository<League> leagueRepository;
         public IRepository<League> LeagueRepository => leagueRepository ?? new Repository<League>(context);
 
-        private IPlayerRepository playerRepository;
+        private readonly IPlayerRepository playerRepository;
         public IPlayerRepository PlayerRepository => playerRepository ?? new PlayerRepository(context);
 
-        private ITeamRepository teamRepository;
+        private readonly ITeamRepository teamRepository;
         public ITeamRepository TeamRepository => teamRepository ?? new TeamRepository(context);
 
-        private ITeamLeagueRepository teamLeagueRepository;
+        private readonly ITeamLeagueRepository teamLeagueRepository;
         public ITeamLeagueRepository TeamLeagueRepository => teamLeagueRepository ?? new TeamLeagueRepository(context);
 
         #endregion

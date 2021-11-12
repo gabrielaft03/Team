@@ -2,6 +2,7 @@
 using EfTeams.Data;
 using EfTeams.Data.Models;
 using EfTeams.Repositories.Generic;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace EfTeams.Business.Services
     public class TeamsService : ITeamsService
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly TeamDbContext context;        
+        private readonly TeamDbContext context;
 
         public TeamsService(IUnitOfWork unitOfWork, TeamDbContext context)
         {
@@ -24,7 +25,7 @@ namespace EfTeams.Business.Services
 
         public async Task<bool> AddPlayerWithTeamId(Player player)
         {
-            context.Players.Remove(player);
+            //context.Players.Remove(player);
             try
             {
                 if (player.TeamId > 0 || player.Team.Id > 0)
