@@ -23,7 +23,7 @@ namespace EfTeams.Repositories.Generic
         public async Task AddRange(IEnumerable<T> entity)
             => context.Set<T>().AddRange(entity);
 
-        public async Task Delete(T entity)
+        public virtual async Task Delete(T entity)
             => context.Set<T>().Remove(entity);
 
         public async Task DeleteRange(IEnumerable<T> entity)

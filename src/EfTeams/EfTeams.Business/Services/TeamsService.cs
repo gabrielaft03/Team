@@ -2,7 +2,6 @@
 using EfTeams.Data;
 using EfTeams.Data.Models;
 using EfTeams.Repositories.Generic;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

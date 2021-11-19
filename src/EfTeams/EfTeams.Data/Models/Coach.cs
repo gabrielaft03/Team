@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EfTeams.Data.Models
 {
@@ -7,6 +8,8 @@ namespace EfTeams.Data.Models
         [Key]
         public int Id { get; set; }
         public string CoachName { get; set; }
+        public ICollection<Team> Teams { get; set; }
+
     }
 
 }

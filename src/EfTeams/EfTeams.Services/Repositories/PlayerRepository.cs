@@ -13,6 +13,13 @@ namespace EfTeams.Repositories.Repositories
     {
         public PlayerRepository(TeamDbContext context) : base(context)
         {
+
+        }
+
+        public override Task Delete(Player entity)
+        {
+            //entity.Team.
+            return base.Delete(entity);
         }
 
         public async Task<IEnumerable<Player>> GetPlayerAsync(int teamId)

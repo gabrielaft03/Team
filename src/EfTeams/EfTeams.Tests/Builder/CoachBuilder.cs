@@ -25,6 +25,5 @@ namespace EfTeams.Tests.Builder
             _dbContext.AddRange(coaches);
         }
 
-
     }
 }

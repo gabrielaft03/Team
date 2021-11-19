@@ -1,19 +1,11 @@
 ﻿using EfTeams.Business.Interfaces;
-using EfTeams.Business.Services;
 using EfTeams.Data;
-using EfTeams.Data.Models;
-using EfTeams.Repositories.Generic;
 using EfTeams.Repositories.Interfaces;
 using EfTeams.Repositories.Repositories;
 using EfTeams.Tests.Builder;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EfTeams.Tests.Base
 {
@@ -22,12 +14,15 @@ namespace EfTeams.Tests.Base
         public TeamDbContext db;
         public TeamDbContext dbSQL;
 
-        //ITeamsService TeamService { get; set; }
-        //IPlayerRepository PlayerRepository { get; set; }
-        //Mock<IPlayerRepository> PlayerRepositoryMock { get; set; }
+        //public ITeamsService TeamServices { get; set; }
+        //public IPlayerRepository IPlayerRepository { get; set; }
+        //public Mock<IPlayerRepository> IPlayerRepositoryMock { get; set; }
         public CoachBuilder coachBuilder { get; set; }
         public CountryBuilder countryBuilder { get; set; }
         public LeagueBuilder leagueBuilder { get; set; }
+        public PlayerBuilder playerBuilder { get; set; }
+        public TeamBuilder teamBuilder { get; set; }
+
         public TeamDbContext GetMemoryContext()
         {
             var options = new DbContextOptionsBuilder<TeamDbContext>()
@@ -52,7 +47,10 @@ namespace EfTeams.Tests.Base
             coachBuilder = new CoachBuilder(db);
             countryBuilder = new CountryBuilder(db);
             leagueBuilder = new LeagueBuilder(db);
-            //PlayerRepository = new PlayerRepository(db);
+            teamBuilder = new TeamBuilder(db);
+            playerBuilder = new PlayerBuilder(db);
+            //IPlayerRepository = new PlayerRepository(db);
+
             if (db.Database.IsInMemory())
             {
                 db.Database.EnsureDeleted();
@@ -60,6 +58,15 @@ namespace EfTeams.Tests.Base
                 countryBuilder.AddCountries(5);
                 leagueBuilder.AddLeagues(5);
                 coachBuilder.Build();
+                countryBuilder.Build();
+                leagueBuilder.Build();
+
+                teamBuilder.AddTeams(1);
+                teamBuilder.Build();
+                playerBuilder.AddPlayers(1);
+                playerBuilder.Build();
+                //playerBuilder.AddPlayers(5, coachBuilder, countryBuilder,leagueBuilder);
+
             }
         }
         
