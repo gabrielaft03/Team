@@ -126,7 +126,7 @@ namespace EfTeams.Tests
         }
 
         [Test]
-        public async Task DeleteCoaches()
+        public async Task DeleteCoachesInvalidOperationException()
         {
 
             using var unitOfWork = new UnitOfWork(db);

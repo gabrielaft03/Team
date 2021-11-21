@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EfTeams.Tests
 {
-    public class TeamAsyncTests: EfTeamsUnitTest
+    public class TeamAsyncTests : EfTeamsUnitTest
     {
         [Test]
         public async Task AddTeam()
@@ -20,10 +20,11 @@ namespace EfTeams.Tests
             var unitOfWork = new UnitOfWork(db);
 
             await unitOfWork.TeamRepository.Add(team);
-            var result = unitOfWork.Complete();
+            var completed = await unitOfWork .Complete();
             //var processor = new TeamsService(unitOfWork, db);
             //var result = processor.GetPlayerByTeamAsync(team.Id);
             Assert.Greater(team.Id, 0);
+            Assert.IsTrue(completed);
         }
 
         [Test]
@@ -37,7 +38,9 @@ namespace EfTeams.Tests
             var unitOfWork = new UnitOfWork(db);
 
             await unitOfWork.TeamRepository.AddRange(teams);
-            var result = unitOfWork.Complete();
+            var completed = await unitOfWork .Complete();
+
+            Assert.IsTrue(completed);
             Assert.Greater(teams[0].Id, 0);
             Assert.Greater(teams[1].Id, 0);
         }
@@ -79,11 +82,11 @@ namespace EfTeams.Tests
             teamFromDB.TeamName = team.TeamName;
 
             await unitOfWork.TeamRepository.Update(teamFromDB);
-            var completed = unitOfWork.Complete();
+            var completed = await unitOfWork.Complete();
             //unitOfWork.TeamRepository.context.Teams.Items[0].TeamName
 
             Assert.AreEqual(teamFromDB.TeamName, team.TeamName);
-            Assert.IsTrue(completed.Result);
+            Assert.IsTrue(completed);
         }
 
         [Test]
@@ -98,13 +101,13 @@ namespace EfTeams.Tests
             teamsFromDB.First(c => c.Id == 1).TeamName = teams[0].TeamName;
 
             await unitOfWork.TeamRepository.UpdateRange(teamsFromDB);
-            var completed = unitOfWork.Complete();
+            var completed = await unitOfWork.Complete();
 
             Assert.AreEqual(teamsFromDB.First(c => c.Id == 1).TeamName, teams[0].TeamName);
         }
 
         [Test]
-        public async Task DeleteTeam()
+        public async Task DeleteTeamInvalidOperationException()
         {
             using var unitOfWork = new UnitOfWork(db);
             var teamsFromDB = await unitOfWork.TeamRepository.Get(1);
@@ -113,11 +116,26 @@ namespace EfTeams.Tests
                 unitOfWork.TeamRepository.Delete(teamsFromDB).GetAwaiter().GetResult();
                 var completed = unitOfWork.Complete().GetAwaiter().GetResult();
             };
-            Assert.Throws<InvalidOperationException>(()=>action());
+            Assert.Throws<InvalidOperationException>(() => action());
         }
 
         [Test]
-        public async Task DeleteTeams()
+        public async Task DeleteTeam()
+        {
+            using var unitOfWork = new UnitOfWork(db);
+            var teamsFromDB = await unitOfWork.TeamRepository.Get(1);
+            var playersFromDB = await unitOfWork.PlayerRepository.GetAll();
+
+            await unitOfWork.PlayerRepository.DeleteRange(playersFromDB);
+            var completedPlayers = await unitOfWork.Complete();
+
+            await unitOfWork.TeamRepository.Delete(teamsFromDB);
+            var completed = await unitOfWork.Complete();
+            Assert.IsTrue(completed);
+        }
+
+        [Test]
+        public async Task DeleteTeamsInvalidOperationException()
         {
             using var unitOfWork = new UnitOfWork(db);
             var teamsFromDB = await unitOfWork.TeamRepository.GetAll();

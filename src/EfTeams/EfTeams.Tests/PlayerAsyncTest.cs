@@ -23,6 +23,7 @@ namespace EfTeams.Tests
             var result = await unitOfWork .Complete();
 
             Assert.Greater(player.Id, 0);
+            Assert.IsTrue(result);
         }
 
         [Test]
@@ -37,6 +38,8 @@ namespace EfTeams.Tests
 
             await unitOfWork.PlayerRepository.AddRange(players);
             var result = await unitOfWork.Complete();
+
+            Assert.IsTrue(result);
             Assert.Greater(players[0].Id, 0);
             Assert.Greater(players[1].Id, 0);
         }

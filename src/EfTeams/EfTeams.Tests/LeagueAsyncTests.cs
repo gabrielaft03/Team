@@ -19,9 +19,10 @@ namespace EfTeams.Tests
             var unitOfWork = new UnitOfWork(db);
 
             await unitOfWork.LeagueRepository.Add(league);
-            var result = await unitOfWork .Complete();
+            var result = await unitOfWork.Complete();
             //var processor = new TeamsService(unitOfWork, db);
             //var result = processor.GetPlayerByTeamAsync(league.Id);
+            Assert.IsTrue(result);
             Assert.Greater(league.Id, 0);
         }
 
@@ -37,6 +38,8 @@ namespace EfTeams.Tests
 
             await unitOfWork.LeagueRepository.AddRange(Leagues);
             var result = await unitOfWork .Complete();
+
+            Assert.IsTrue(result);
             Assert.Greater(Leagues[0].Id, 0);
             Assert.Greater(Leagues[1].Id, 0);
         }
