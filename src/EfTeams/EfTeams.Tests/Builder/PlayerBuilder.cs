@@ -29,5 +29,13 @@ namespace EfTeams.Tests.Builder
             _dbContext.AddRange(players);
         }
 
+        public void DeletePlayers(int count = 0)
+        {
+            var result = _dbContext.Players.SingleOrDefault();
+            _dbContext.Remove(result);
+
+            //if count>1 RemoveRange
+        }
+
     }
 }

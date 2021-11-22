@@ -124,10 +124,10 @@ namespace EfTeams.Tests
         {
             using var unitOfWork = new UnitOfWork(db);
             var teamsFromDB = await unitOfWork.TeamRepository.Get(1);
-            var playersFromDB = await unitOfWork.PlayerRepository.GetAll();
 
-            await unitOfWork.PlayerRepository.DeleteRange(playersFromDB);
-            var completedPlayers = await unitOfWork.Complete();
+            //Deleting dependencies: Delete players so it can be possible to delete a Team successfuly
+            //with the builder.
+            playerBuilder.DeletePlayers();
 
             await unitOfWork.TeamRepository.Delete(teamsFromDB);
             var completed = await unitOfWork.Complete();
