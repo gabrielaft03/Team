@@ -33,6 +33,7 @@ namespace EfTeams.Tests.Builder
         {
             var result = _dbContext.Players.SingleOrDefault();
             _dbContext.Remove(result);
+            
 
             //if count>1 RemoveRange
         }
